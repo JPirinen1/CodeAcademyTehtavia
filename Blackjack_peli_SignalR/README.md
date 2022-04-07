@@ -1,8 +1,8 @@
 # SignalR Chat + Blackjack
 
 Tässä tehtävässä luotiin BlackJack peli sovellus useammalle pelaajalle käyttäen ASP.NET ympärisöä hyödyksi. Alla tarkempia kuvauksia vaatimuksista mitä sovelluksessa vaadittiin.
-Tässä toteutuksessa on kaikki vaatimukset tehty lukuunottamatta korttien piirtämistä näytölle
-(ne näkyvät sovelluksessa vain numeroina). Lisäksi myös muita pieniä viilauksia olisi sovelluksen sujuva toiminta vaatinut.
+Tässä toteutuksessa on kaikki vaatimukset tehty lukuunottamatta korttien piirtämistä näytölle (ne näkyvät sovelluksessa vain numeroina). 
+Lisäksi myös muita pieniä viilauksia olisi sovelluksen sujuva toiminta vaatinut.
 
 ## Tehtävät
 
