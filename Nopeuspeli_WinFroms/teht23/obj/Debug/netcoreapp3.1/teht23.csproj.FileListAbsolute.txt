@@ -1,0 +1,39 @@
+C:\visual studio projekti\teht23\teht23\bin\Debug\netcoreapp3.1\teht23.exe
+C:\visual studio projekti\teht23\teht23\bin\Debug\netcoreapp3.1\teht23.deps.json
+C:\visual studio projekti\teht23\teht23\bin\Debug\netcoreapp3.1\teht23.runtimeconfig.json
+C:\visual studio projekti\teht23\teht23\bin\Debug\netcoreapp3.1\teht23.runtimeconfig.dev.json
+C:\visual studio projekti\teht23\teht23\bin\Debug\netcoreapp3.1\teht23.dll
+C:\visual studio projekti\teht23\teht23\bin\Debug\netcoreapp3.1\teht23.pdb
+C:\visual studio projekti\teht23\teht23\obj\Debug\netcoreapp3.1\teht23.csprojAssemblyReference.cache
+C:\visual studio projekti\teht23\teht23\obj\Debug\netcoreapp3.1\teht23.Properties.Resources.resources
+C:\visual studio projekti\teht23\teht23\obj\Debug\netcoreapp3.1\teht23.csproj.GenerateResource.cache
+C:\visual studio projekti\teht23\teht23\obj\Debug\netcoreapp3.1\teht23.AssemblyInfoInputs.cache
+C:\visual studio projekti\teht23\teht23\obj\Debug\netcoreapp3.1\teht23.AssemblyInfo.cs
+C:\visual studio projekti\teht23\teht23\obj\Debug\netcoreapp3.1\teht23.dll
+C:\visual studio projekti\teht23\teht23\obj\Debug\netcoreapp3.1\teht23.pdb
+C:\visual studio projekti\teht23\teht23\obj\Debug\netcoreapp3.1\teht23.genruntimeconfig.cache
+C:\visual studio projekti\teht23\teht23\obj\Debug\netcoreapp3.1\teht23.FormSpeedTestGame.resources
+C:\visual studio projekti\teht23\teht23\obj\Debug\netcoreapp3.1\teht23.NameTohighScores.resources
+C:\visual studio projekti\teht23\teht23\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+C:\visual studio projekti\teht23\teht23\obj\Debug\netcoreapp3.1\teht23.csproj.CoreCompileInputs.cache
+C:\visual studio projekti\teht23\teht23\obj\Debug\netcoreapp3.1\teht23.csproj.CopyComplete
+F:\githubrepot\CodeAcademyTehtavia\Nopeuspeli\teht23\bin\Debug\netcoreapp3.1\teht23.exe
+F:\githubrepot\CodeAcademyTehtavia\Nopeuspeli\teht23\bin\Debug\netcoreapp3.1\teht23.deps.json
+F:\githubrepot\CodeAcademyTehtavia\Nopeuspeli\teht23\bin\Debug\netcoreapp3.1\teht23.runtimeconfig.json
+F:\githubrepot\CodeAcademyTehtavia\Nopeuspeli\teht23\bin\Debug\netcoreapp3.1\teht23.runtimeconfig.dev.json
+F:\githubrepot\CodeAcademyTehtavia\Nopeuspeli\teht23\bin\Debug\netcoreapp3.1\teht23.dll
+F:\githubrepot\CodeAcademyTehtavia\Nopeuspeli\teht23\bin\Debug\netcoreapp3.1\teht23.pdb
+F:\githubrepot\CodeAcademyTehtavia\Nopeuspeli\teht23\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+F:\githubrepot\CodeAcademyTehtavia\Nopeuspeli\teht23\obj\Debug\netcoreapp3.1\teht23.csproj.AssemblyReference.cache
+F:\githubrepot\CodeAcademyTehtavia\Nopeuspeli\teht23\obj\Debug\netcoreapp3.1\teht23.NameTohighScores.resources
+F:\githubrepot\CodeAcademyTehtavia\Nopeuspeli\teht23\obj\Debug\netcoreapp3.1\teht23.Properties.Resources.resources
+F:\githubrepot\CodeAcademyTehtavia\Nopeuspeli\teht23\obj\Debug\netcoreapp3.1\teht23.FormSpeedTestGame.resources
+F:\githubrepot\CodeAcademyTehtavia\Nopeuspeli\teht23\obj\Debug\netcoreapp3.1\teht23.csproj.GenerateResource.cache
+F:\githubrepot\CodeAcademyTehtavia\Nopeuspeli\teht23\obj\Debug\netcoreapp3.1\teht23.GeneratedMSBuildEditorConfig.editorconfig
+F:\githubrepot\CodeAcademyTehtavia\Nopeuspeli\teht23\obj\Debug\netcoreapp3.1\teht23.AssemblyInfoInputs.cache
+F:\githubrepot\CodeAcademyTehtavia\Nopeuspeli\teht23\obj\Debug\netcoreapp3.1\teht23.AssemblyInfo.cs
+F:\githubrepot\CodeAcademyTehtavia\Nopeuspeli\teht23\obj\Debug\netcoreapp3.1\teht23.csproj.CoreCompileInputs.cache
+F:\githubrepot\CodeAcademyTehtavia\Nopeuspeli\teht23\obj\Debug\netcoreapp3.1\teht23.csproj.CopyComplete
+F:\githubrepot\CodeAcademyTehtavia\Nopeuspeli\teht23\obj\Debug\netcoreapp3.1\teht23.dll
+F:\githubrepot\CodeAcademyTehtavia\Nopeuspeli\teht23\obj\Debug\netcoreapp3.1\teht23.pdb
+F:\githubrepot\CodeAcademyTehtavia\Nopeuspeli\teht23\obj\Debug\netcoreapp3.1\teht23.genruntimeconfig.cache
