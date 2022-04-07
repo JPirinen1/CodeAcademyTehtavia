@@ -1,0 +1,195 @@
+﻿@page "/"
+@using BlackJack.Shared
+@using Microsoft.AspNetCore.SignalR.Client
+@inject NavigationManager NavigationManager
+@implements IAsyncDisposable
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label>
+                    User:
+                    <input @bind="player.Name" disabled="@userRegistered" />
+                </label>
+                <button type="button" @onclick="JoinGame" disabled="@playerReady">Ready</button>
+                <button type="button" @onclick="PlayerHit" disabled="@playerNotPlaying">Hit</button>
+                <button type="button" @onclick="PlayerStay" disabled="@playerNotPlaying">Stay</button>
+                <h1>Wins: @player.WinCount</h1>
+            </div>
+            <div class="form-group">
+                <label>
+                    Message:
+                    <input @bind="player.Message" size="30" />
+                </label>
+            </div>
+            <button @onclick="Send" disabled="@(!IsConnected)">Send</button>
+        </div>
+        <div class="col-lg-6">
+            <h2>@player.Score</h2>
+            <table>
+                <tr>
+                        @foreach (var card in player.Hand)
+                        {
+                            <td>
+                                @card.CardNumber.GetHashCode();
+                            </td>
+                        }
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4">
+            <ul id="messagesList">
+                @foreach (var message in messages)
+                {
+                    <li>@message</li>
+                }
+            </ul>
+        </div>
+        <div class="col-md-8">
+            @if (players.Count > 0)
+            {
+                <ul>
+                    @foreach (var p in players)
+                    {
+                        if (p.Id != player.Id)
+                        {
+                            <li>
+                                @p.Name : @p.State . Wins : @p.WinCount
+                            </li>
+                        }
+                    }
+                </ul>
+            }
+        </div>
+    </div>
+</div>
+
+
+@code {
+    private HubConnection hubConnection;
+    private List<string> messages = new List<string>();
+    private List<User> players = new List<User>();
+    private User player = new User();
+    private bool userRegistered = false;
+    private bool playerReady = false;
+    private bool gameOn = false;
+    private bool playerNotPlaying = true;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        hubConnection = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/blackjackhub"))
+            .Build();
+
+        hubConnection.On<User>("ReceiveMessage", (userMessage) =>
+        {
+            var encodedMsg = $"{userMessage.ts}: {userMessage.Name}: {userMessage.Message}";
+            messages.Add(encodedMsg);
+            StateHasChanged();
+        });
+
+        hubConnection.On<List<User>, bool>("ReceivePlayerReady", (users, startGame) =>
+        {
+            players = users;
+            var p = users.FirstOrDefault(x => x.Id == player.Id);
+
+            if(p != null)
+            {
+                player = p;
+            }
+
+            if (startGame == true)
+            {
+                gameOn = true;
+                playerNotPlaying = false;
+            }
+
+            StateHasChanged();
+        });
+
+        hubConnection.On<User>("UpdatePlayer", (user) =>
+        {
+            player = user;
+            StateHasChanged();
+        });
+
+        hubConnection.On<List<User>, bool>("ReceivePlayerHit", (users, stopGame) =>
+        {
+            players = users;
+            if(stopGame)
+            {
+                gameOn = false;
+                playerReady = false;
+                player = players.FirstOrDefault(x => x.Id == player.Id);
+            }
+            StateHasChanged();
+        });
+
+        hubConnection.On<List<User>, bool>("ReceivePlayerStay", (users, stopGame) =>
+        {
+            players = users;
+            if (stopGame == true)
+            {
+                gameOn = false;
+                playerReady = false;
+                player = players.FirstOrDefault(x => x.Id == player.Id);
+            }
+            StateHasChanged();
+        });
+
+        hubConnection.On<bool>("PlayerStopped", (stay) =>
+        {
+            playerNotPlaying = stay;
+            StateHasChanged();
+        });
+
+        hubConnection.On<User, bool>("PlayerNewHit", (user, over) =>
+        {
+            player = user;
+            if(over)
+            {
+                playerNotPlaying = true;
+            }
+            StateHasChanged();
+        });
+
+        await hubConnection.StartAsync();
+    }
+
+    async Task Send() =>
+        await hubConnection.SendAsync("SendMessage", player);
+
+    async Task PlayerReady() =>
+        await hubConnection.SendAsync("Ready", player);
+
+    async Task PlayerHit() =>
+        await hubConnection.SendAsync("Hit", player);
+
+    async Task PlayerStay() =>
+        await hubConnection.SendAsync("Stay", player);
+
+    public bool IsConnected =>
+            hubConnection.State == HubConnectionState.Connected;
+
+    public async ValueTask DisposeAsync()
+    {
+        if (hubConnection is not null)
+        {
+            await hubConnection.DisposeAsync();
+        }
+    }
+
+    async Task JoinGame()
+    {
+        userRegistered = true;
+        playerReady = true;
+        await PlayerReady();
+    }
+}
